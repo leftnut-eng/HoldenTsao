@@ -54,9 +54,58 @@
                     <p>
                         I am a student at Harvard-Westlake.
                     </p>
+                    <div class="tab-titles">
+                        <p onclick="opentab('skills')" class="tab-links active-link">
+                            Skills
+                        </p>
+                        <p onclick="opentab('experience')" class="tab-links">
+                            Experience
+                        </p>
+                        <p onclick="opentab('education')" class="tab-links">
+                            Education
+                        </p>
+                    </div>
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li>
+                                I am good at science
+                            </li>
+                        </ul>    
+                    </div>
+                    <div class="tab-contents" id="experience">
+                        <ul>
+                            <li>
+                                I have 2 years in VEX robotics
+                            </li>
+                            <li>
+                                I have played 7 years of baseball
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li>
+                                I am currently learning advanced geometry
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+    <script>
+        var tablinks=document.getElementsByClassName("tab-links")
+        var tabcontents=document.getElementsByClassName("tab-contents")
+        function opentab(tab){
+            for(tablink of tablinks){
+                tablink.classList.remove("active-link");
+            }
+            event.currentTarget.classList.add("active-link");
+            for(tabcontent of tabcontents){
+                tabcontent.classList.remove("active-tab");
+            }
+            document.getElementById(tab).classList.add("active-tab");
+        }
+    </script>
 </body>
 </html>
